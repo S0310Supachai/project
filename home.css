@@ -1,0 +1,215 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #dedfe0;
+    /* สีพื้นหลังอ่อนๆ เพื่อความสบายตา */
+    font-family: 'Sarabun', sans-serif;
+    /* ใช้ Sarabun เป็นฟอนต์หลักสำหรับเนื้อหา */
+    line-height: 1.6;
+    /* เพิ่มระยะห่างบรรทัดเพื่อการอ่านที่ง่ายขึ้น */
+    color: #333;
+    /* สีตัวอักษรเริ่มต้น */
+}
+
+/* CSS เพิ่มเติมสำหรับแผนที่ ถ้าไม่ใส่ใน style.css */
+.map-container {
+    width: 80%;
+    /* กำหนดความกว้างของ iframe container */
+    max-width: 900px;
+    /* จำกัดความกว้างสูงสุดของแผนที่ */
+    margin: 100px auto;
+    /* จัดกึ่งกลางแผนที่และมีระยะห่างด้านบน/ล่าง */
+    border-radius: 8px;
+    /* ทำให้มุมมนเล็กน้อย */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* เพิ่มเงา */
+    overflow: hidden;
+    /* ซ่อนส่วนเกินของ border-radius */
+}
+
+.map-container iframe {
+    width: 100%;
+    /* ทำให้ iframe เต็มความกว้างของ container */
+    height: 450px;
+    /* กำหนดความสูงของ iframe */
+    border: 0;
+    /* ลบ border ของ iframe */
+    display: block;
+    /* แก้ปัญหาช่องว่างด้านล่าง iframe */
+}
+
+.main-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.main-content h1 {
+    position: relative;
+    top: 10vh;
+    font-family: 'Kanit', sans-serif;
+    font-size: 2.5rem;
+    color: #2b63ca;
+}
+
+.main-content p {
+    position: relative;
+    top: 10vh;
+      font-family: 'Kanit', sans-serif;
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+}
+
+/* --- Navbar Styles --- */
+.navbar {
+    display: flex;
+    align-items: center;
+    background-color: #2a4475;
+    /* สีน้ำเงินเข้มขึ้น ดูน่าเชื่อถือ */
+    padding: 0.8rem 2rem;
+    /* ปรับ padding ให้ดูสมดุล */
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+    justify-content: space-between;
+    /* ผลักโลโก้ไปทางซ้ายและ nav-links/login ไปทางขวา */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    /* เพิ่มเงาให้ Navbar ดูมีมิติ */
+}
+
+.logo img {
+    background-color: #ffffff;
+    /* พื้นหลังโลโก้สีขาว */
+    border-radius: 50px;
+    height: 55px;
+    object-fit: contain;
+    /* ให้รูปภาพพอดีกรอบไม่ยืด */
+}
+
+.nav-links {
+    display: flex;
+    /* ต้องมี display: flex; ที่นี่เสมอ */
+    gap: 1.5rem;
+    /* เพิ่มช่องว่างระหว่างลิงก์ให้ห่างขึ้น */
+    /* ไม่ต้องมี margin-right ที่นี่แล้ว เพราะปุ่ม login จะจัดการระยะห่างจากขอบของ navbar ให้เอง */
+}
+
+.nav-links a {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    /* ปรับ padding ให้ลิงก์ดูเป็นบล็อกที่เหมาะสม */
+    color: #ffffff;
+    /* สีตัวอักษรของลิงก์เป็นสีขาวเพื่อให้ตัดกับพื้นหลัง Navbar */
+    font-size: 1.05rem;
+    /* ปรับขนาดฟอนต์ให้ใหญ่ขึ้นเล็กน้อย */
+    font-family: 'Sarabun', sans-serif;
+    transition: all 0.2s ease-in-out;
+    /* เพิ่ม transition ให้ดู smooth ขึ้น */
+    font-weight: 500;
+    /* เพิ่มน้ำหนักฟอนต์เล็กน้อย */
+}
+
+.nav-links a:hover {
+    color: #e0e0e0;
+    /* สีเมื่อ Hover */
+    transform: translateY(-2px);
+    /* ยกขึ้นเล็กน้อยเมื่อ Hover */
+}
+
+.nav-links a:active {
+    font-size: 0.98rem;
+    /* ลดขนาดเล็กน้อยเมื่อกด */
+    transform: scale(0.98);
+}
+
+
+/* --- Login Button Styles --- */
+.login {
+    background-color: #f7a000;
+    /* สีส้มเด่นชัดสำหรับปุ่ม Login/CTA */
+    color: white;
+    padding: 0.6rem 1.5rem;
+    /* ปรับ padding ให้เหมือนปุ่ม */
+    border-radius: 5px;
+    /* ทำให้มุมมนเล็กน้อย */
+    text-decoration: none;
+    /* ลบขีดเส้นใต้ */
+    font-family: 'Sarabun', sans-serif;
+    font-size: 1rem;
+    /* ขนาดฟอนต์ปุ่ม */
+    font-weight: bold;
+    /* ตัวหนา */
+    transition: all 0.2s ease-in-out;
+    border: none;
+    /* ลบเส้นขอบ */
+    cursor: pointer;
+    /* เปลี่ยน cursor เป็น pointer เมื่อชี้ */
+    margin-left: 1rem;
+    /* ระยะห่างจาก nav-links */
+    margin-right: 50px;
+    /* **ทำให้ห่างจากขอบขวา 10px ตามที่คุณต้องการ** */
+}
+
+.login:hover {
+    background-color: #e69100;
+    /* สีเข้มขึ้นเมื่อ Hover */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    /* เพิ่มเงาเมื่อ Hover */
+}
+
+.login:active {
+    transform: translateY(1px);
+    /* ปุ่มยุบลงเล็กน้อยเมื่อกด */
+}
+
+/* --- Responsive Styles (Mobile) --- */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0.8rem 1rem;
+        /* ปรับ padding สำหรับมือถือ */
+        flex-wrap: wrap;
+        /* ให้ items ขึ้นบรรทัดใหม่ได้ถ้าไม่พอ */
+    }
+
+    .logo img {
+        height: 48px;
+        /* ปรับขนาดโลโก้สำหรับมือถือ */
+        border: none;
+        /* ลบ border ถ้าไม่ต้องการบนมือถือ */
+    }
+
+    .nav-links {
+        width: 100%;
+        /* ให้ nav-links เต็มความกว้าง */
+        justify-content: center;
+        /* จัดกลางลิงก์บนมือถือ */
+        margin-top: 0.5rem;
+        /* เพิ่มระยะห่างด้านบนเล็กน้อย */
+        order: 2;
+        /* จัดลำดับให้ nav-links อยู่ด้านล่าง */
+        gap: 1rem;
+        /* ปรับ gap สำหรับมือถือ */
+        margin-right: 0;
+        /* ลบ margin-right สำหรับมือถือ */
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+        /* ปรับขนาดฟอนต์สำหรับมือถือ */
+        padding: 0.4rem 0.7rem;
+        /* ปรับ padding สำหรับมือถือ */
+    }
+
+    .login {
+        /* height:px; ถูกลบออกเนื่องจากเป็นพร็อพเพอร์ตี้ที่ไม่ถูกต้อง */
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+        /* คง padding ที่เหมาะสมสำหรับมือถือ */
+        margin-left: auto;
+        /* จัดไปทางขวาเมื่อมีพื้นที่จำกัด */
+        order: 1;
+        /* จัดลำดับให้ Login อยู่ด้านบน */
+        margin-right: 30px;
+        /* **ทำให้ห่างจากขอบขวา 10px บนมือถือ** */
+    }
+}
