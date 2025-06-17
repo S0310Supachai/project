@@ -54,7 +54,7 @@ body {
 .main-content p {
     position: relative;
     top: 10vh;
-      font-family: 'Kanit', sans-serif;
+    font-family: 'Kanit', sans-serif;
     font-size: 1.1rem;
     max-width: 800px;
     margin: 0 auto 30px auto;
@@ -212,4 +212,50 @@ body {
         margin-right: 30px;
         /* **ทำให้ห่างจากขอบขวา 10px บนมือถือ** */
     }
+
+    .main-content h1 {
+        position: relative;
+        top: 15vh;
+        font-family: 'Kanit', sans-serif;
+        font-size: 1.5rem;
+        color: #2b63ca;
+    }
+
+    .main-content p {
+        position: relative;
+        top: 15vh;
+        font-family: 'Kanit', sans-serif;
+        font-size: 1.1rem;
+        max-width: 800px;
+        margin: 0 auto 30px auto;
+    }
+
+    .map-container {
+         position: relative;
+        top: 10vh;
+        width: 80%;
+        /* กำหนดความกว้างของ iframe container */
+        max-width: 900px;
+        /* จำกัดความกว้างสูงสุดของแผนที่ */
+        margin: 100px auto;
+        /* จัดกึ่งกลางแผนที่และมีระยะห่างด้านบน/ล่าง */
+        border-radius: 8px;
+        /* ทำให้มุมมนเล็กน้อย */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        /* เพิ่มเงา */
+        overflow: hidden;
+        /* ซ่อนส่วนเกินของ border-radius */
+    }
+
+    .map-container iframe {
+        width: 100%;
+        /* ทำให้ iframe เต็มความกว้างของ container */
+        height: 450px;
+        /* กำหนดความสูงของ iframe */
+        border: 0;
+        /* ลบ border ของ iframe */
+        display: block;
+        /* แก้ปัญหาช่องว่างด้านล่าง iframe */
+    }
+
 }
